@@ -9,6 +9,7 @@
 #import "JSONPerfTestAppDelegate.h"
 
 #import "JSONTest.h"
+#import "YAJLDocument.h"
 
 @implementation JSONPerfTestAppDelegate
 
@@ -17,7 +18,9 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 	JSONTest *test = [[JSONTest alloc] init];
 	
-	NSInteger count = 100;
+	NSInteger count = 300;
+  
+  YAJLDocumentStackCapacity = 20;
   
 	[test runWithResourceName:@"twitter_public.json" count:count];		
 	[test runWithResourceName:@"lastfm.json" count:count];	

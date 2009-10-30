@@ -38,12 +38,30 @@ extern NSString *const YAJLGenInvalidObjectException;
 enum {
 	YAJLGenOptionsNone = 0,	
 	YAJLGenOptionsBeautify = 1 << 0,
+  YAJLGenOptionsIgnoreUnknownTypes = 1 << 1, // Ignore unknown types (will use null value)
+  YAJLGenOptionsIncludeUnsupportedTypes = 1 << 2, // Handle non-JSON types (including NSDate, NSData, NSURL)
 };
 typedef NSUInteger YAJLGenOptions;
 
-
+/*!
+ YAJL JSON string generator.
+ Supports the following types:
+ - NSArray
+ - NSDictionary
+ - NSString
+ - NSNumber
+ - NSNull
+ 
+ We also support the following types (if using YAJLGenOptionsIncludeUnsupportedTypes option),
+ by converting to JSON supported types:
+ - NSDate -> number representing number of milliseconds since (1970) epoch
+ - NSData -> Base64 encoded string
+ - NSURL -> URL (absolute) string 
+ */
 @interface YAJLGen : NSObject {
 	yajl_gen gen_;
+  
+  YAJLGenOptions genOptions_;
 }
 
 - (id)initWithGenOptions:(YAJLGenOptions)genOptions indentString:(NSString *)indentString;
@@ -78,9 +96,9 @@ typedef NSUInteger YAJLGenOptions;
 @protocol YAJLCoding <NSObject>
 
 /*!
- Encode to JSON encodable object.
- @result Object such as NSDictionary, NSArray, etc
+ Provide custom and/or encodable object to parse to JSON string.
+ @result Object encodable as JSON such as NSDictionary, NSArray, etc
  */
-- (id)yajl_encodeJSON;
+- (id)JSON;
 
 @end

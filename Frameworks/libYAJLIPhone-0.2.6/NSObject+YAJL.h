@@ -37,7 +37,7 @@
 /*!
  Create JSON string from object.
  Supported objects include: NSArray, NSDictionary, NSNumber, NSString, NSNull
- To handle JSON manually, implement (id)yajl_JSONObject;
+ To override JSON value to encode (or support custom objects), implement (id)JSON; See YAJLCoding in YAJLGen.h
  Otherwise throws YAJLGenInvalidObjectException.
  @result JSON String
  */
@@ -46,7 +46,7 @@
 /*!
  Create JSON string from object.
  Supported objects include: NSArray, NSDictionary, NSNumber, NSString, NSNull
- To handle JSON manually, implement (id)yajl_JSONObject;
+ To override JSON value to encode (or support custom objects), implement (id)JSON; See YAJLCoding in YAJLGen.h
  Otherwise throws YAJLGenInvalidObjectException.
  @param options
  @param indentString
@@ -58,20 +58,23 @@
 #pragma mark Parsing
 
 /*!
- Parse JSON string.
+ Parse JSON (NSString or NSData or dataUsingEncoding:).
  @result JSON object
  @throws YAJLParserException If a parse error occured
  @throws YAJLParsingUnsupportedException If not NSData or doesn't respond to dataUsingEncoding:
  
  @code
  NSString *JSONString = @"{'foo':['bar', true]}";
- [JSONString yajl_JSON];
+ id JSONValue = [JSONString yajl_JSON];
+ 
+ NSData *JSONData = ...;
+ id JSONValue = [JSONData yajl_JSON];
  @endcode
  */
 - (id)yajl_JSON;
 
 /*!
- Parse JSON string with out error.
+ Parse JSON (NSString or NSData or dataUsingEncoding:) with out error.
  @param error Error to set if we failed to parse
  @result JSON object
  @throws YAJLParserException If a parse error occured
@@ -87,7 +90,7 @@
 - (id)yajl_JSON:(NSError **)error;
 
 /*!
- Parse JSON string with options and out error.
+ Parse JSON (NSString or NSData or dataUsingEncoding:) with options and out error.
  @param options Options (see YAJLParserOptions)
  @param error Error to set if we failed to parse
  @result JSON object
