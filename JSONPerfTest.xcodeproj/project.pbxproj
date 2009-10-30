@@ -145,7 +145,7 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		00DB7F79107EECA200F85213 /* libYAJLIPhone-0.2.6 */ = {
+		00DB7F79107EECA200F85213 /* libYAJLIPhone-0.2.10 */ = {
 			isa = PBXGroup;
 			children = (
 				00DB7F7A107EECA200F85213 /* libYAJLIPhone.a */,
@@ -158,8 +158,8 @@
 				00DB7F81107EECA200F85213 /* YAJLGen.h */,
 				00DB7F82107EECA200F85213 /* YAJLParser.h */,
 			);
-			name = "libYAJLIPhone-0.2.6";
-			path = "Frameworks/libYAJLIPhone-0.2.6";
+			name = "libYAJLIPhone-0.2.10";
+			path = "Frameworks/libYAJLIPhone-0.2.10";
 			sourceTree = "<group>";
 		};
 		00F89022109B5B8900C8E5AD /* TouchJSON */ = {
@@ -260,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				00F89022109B5B8900C8E5AD /* TouchJSON */,
-				00DB7F79107EECA200F85213 /* libYAJLIPhone-0.2.6 */,
+				00DB7F79107EECA200F85213 /* libYAJLIPhone-0.2.10 */,
 				00D9FEB0107EE26200A11DBA /* SBJSON-2.2.2 */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
