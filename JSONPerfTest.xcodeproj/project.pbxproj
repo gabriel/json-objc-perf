@@ -15,7 +15,6 @@
 		00D9FEC4107EE26200A11DBA /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEBD107EE26200A11DBA /* SBJsonWriter.m */; };
 		00D9FEC8107EE39E00A11DBA /* JSONPerfTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEC7107EE39E00A11DBA /* JSONPerfTestAppDelegate.m */; };
 		00D9FEEE107EE4F600A11DBA /* JSONTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEED107EE4F600A11DBA /* JSONTest.m */; };
-		00DB7F83107EECA200F85213 /* libYAJLIPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DB7F7A107EECA200F85213 /* libYAJLIPhone.a */; };
 		00DB7F9A107EEEAE00F85213 /* twitter_public.json in Resources */ = {isa = PBXBuildFile; fileRef = 00DB7F99107EEEAE00F85213 /* twitter_public.json */; };
 		00DB801B107EF79F00F85213 /* delicious_popular.json in Resources */ = {isa = PBXBuildFile; fileRef = 00DB8019107EF79F00F85213 /* delicious_popular.json */; };
 		00DB801C107EF79F00F85213 /* lastfm.json in Resources */ = {isa = PBXBuildFile; fileRef = 00DB801A107EF79F00F85213 /* lastfm.json */; };
@@ -30,6 +29,7 @@
 		00F8904F109B5BF400C8E5AD /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F89043109B5BF400C8E5AD /* NSDictionary_JSONExtensions.m */; };
 		00F89050109B5BF400C8E5AD /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F89045109B5BF400C8E5AD /* NSScanner_Extensions.m */; };
 		00F89051109B5BF400C8E5AD /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F89046109B5BF400C8E5AD /* CDataScanner.m */; };
+		00F8913C109B6A1500C8E5AD /* libYAJLIPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DB7F7A107EECA200F85213 /* libYAJLIPhone.a */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -103,10 +103,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F8913C109B6A1500C8E5AD /* libYAJLIPhone.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
-				00DB7F83107EECA200F85213 /* libYAJLIPhone.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +356,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gabriel Handford";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gabriel Handford";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -366,9 +368,12 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.6\"",
 					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.7\"",
+					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.10\"",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = JSONPerfTest;
+				PROVISIONING_PROFILE = "439BA62B-5015-4D34-8115-872ACE4DD6A3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "439BA62B-5015-4D34-8115-872ACE4DD6A3";
 				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
@@ -378,6 +383,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gabriel Handford";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gabriel Handford";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = JSONPerfTest_Prefix.pch;
@@ -386,9 +393,12 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.6\"",
 					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.7\"",
+					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.10\"",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = JSONPerfTest;
+				PROVISIONING_PROFILE = "439BA62B-5015-4D34-8115-872ACE4DD6A3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "439BA62B-5015-4D34-8115-872ACE4DD6A3";
 				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
