@@ -15,6 +15,8 @@
 		00D9FEC4107EE26200A11DBA /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEBD107EE26200A11DBA /* SBJsonWriter.m */; };
 		00D9FEC8107EE39E00A11DBA /* JSONPerfTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEC7107EE39E00A11DBA /* JSONPerfTestAppDelegate.m */; };
 		00D9FEEE107EE4F600A11DBA /* JSONTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEED107EE4F600A11DBA /* JSONTest.m */; };
+		00DB68CE1320248500AF998E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB68CB1320248500AF998E /* JSONKit.m */; };
+		00DB696D13202C5100AF998E /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DB696C13202C5100AF998E /* YAJLiOS.framework */; };
 		00DB7F9A107EEEAE00F85213 /* twitter_public.json in Resources */ = {isa = PBXBuildFile; fileRef = 00DB7F99107EEEAE00F85213 /* twitter_public.json */; };
 		00DB801B107EF79F00F85213 /* delicious_popular.json in Resources */ = {isa = PBXBuildFile; fileRef = 00DB8019107EF79F00F85213 /* delicious_popular.json */; };
 		00DB801C107EF79F00F85213 /* lastfm.json in Resources */ = {isa = PBXBuildFile; fileRef = 00DB801A107EF79F00F85213 /* lastfm.json */; };
@@ -29,7 +31,6 @@
 		00F8904F109B5BF400C8E5AD /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F89043109B5BF400C8E5AD /* NSDictionary_JSONExtensions.m */; };
 		00F89050109B5BF400C8E5AD /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F89045109B5BF400C8E5AD /* NSScanner_Extensions.m */; };
 		00F89051109B5BF400C8E5AD /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F89046109B5BF400C8E5AD /* CDataScanner.m */; };
-		00F8913C109B6A1500C8E5AD /* libYAJLIPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DB7F7A107EECA200F85213 /* libYAJLIPhone.a */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -56,15 +57,10 @@
 		00D9FEEC107EE4F600A11DBA /* JSONTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTest.h; sourceTree = "<group>"; };
 		00D9FEED107EE4F600A11DBA /* JSONTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTest.m; sourceTree = "<group>"; };
 		00D9FEF4107EE54700A11DBA /* JSONPerfTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONPerfTest_Prefix.pch; sourceTree = "<group>"; };
-		00DB7F7A107EECA200F85213 /* libYAJLIPhone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYAJLIPhone.a; sourceTree = "<group>"; };
-		00DB7F7B107EECA200F85213 /* NSObject+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YAJL.h"; sourceTree = "<group>"; };
-		00DB7F7C107EECA200F85213 /* YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJL.h; sourceTree = "<group>"; };
-		00DB7F7D107EECA200F85213 /* yajl_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_common.h; sourceTree = "<group>"; };
-		00DB7F7E107EECA200F85213 /* yajl_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_gen.h; sourceTree = "<group>"; };
-		00DB7F7F107EECA200F85213 /* yajl_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parse.h; sourceTree = "<group>"; };
-		00DB7F80107EECA200F85213 /* YAJLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLDocument.h; sourceTree = "<group>"; };
-		00DB7F81107EECA200F85213 /* YAJLGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLGen.h; sourceTree = "<group>"; };
-		00DB7F82107EECA200F85213 /* YAJLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLParser.h; sourceTree = "<group>"; };
+		00DB68CA1320248500AF998E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		00DB68CB1320248500AF998E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		00DB696C13202C5100AF998E /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = Frameworks/YAJLiOS.framework; sourceTree = "<group>"; };
+		00DB69B813202DF000AF998E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		00DB7F99107EEEAE00F85213 /* twitter_public.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = twitter_public.json; sourceTree = "<group>"; };
 		00DB8019107EF79F00F85213 /* delicious_popular.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = delicious_popular.json; sourceTree = "<group>"; };
 		00DB801A107EF79F00F85213 /* lastfm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lastfm.json; sourceTree = "<group>"; };
@@ -103,10 +99,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00F8913C109B6A1500C8E5AD /* libYAJLIPhone.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				00DB696D13202C5100AF998E /* YAJLiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,21 +141,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		00DB7F79107EECA200F85213 /* libYAJLIPhone-0.2.10 */ = {
+		00DB68C81320248500AF998E /* JSONKit-1.4 */ = {
 			isa = PBXGroup;
 			children = (
-				00DB7F7A107EECA200F85213 /* libYAJLIPhone.a */,
-				00DB7F7B107EECA200F85213 /* NSObject+YAJL.h */,
-				00DB7F7C107EECA200F85213 /* YAJL.h */,
-				00DB7F7D107EECA200F85213 /* yajl_common.h */,
-				00DB7F7E107EECA200F85213 /* yajl_gen.h */,
-				00DB7F7F107EECA200F85213 /* yajl_parse.h */,
-				00DB7F80107EECA200F85213 /* YAJLDocument.h */,
-				00DB7F81107EECA200F85213 /* YAJLGen.h */,
-				00DB7F82107EECA200F85213 /* YAJLParser.h */,
+				00DB68CA1320248500AF998E /* JSONKit.h */,
+				00DB68CB1320248500AF998E /* JSONKit.m */,
 			);
-			name = "libYAJLIPhone-0.2.10";
-			path = "Frameworks/libYAJLIPhone-0.2.10";
+			name = "JSONKit-1.4";
+			path = "Frameworks/JSONKit-1.4";
 			sourceTree = "<group>";
 		};
 		00F89022109B5B8900C8E5AD /* TouchJSON */ = {
@@ -228,6 +217,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				00DB69B813202DF000AF998E /* README.md */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				00D9FECC107EE41F00A11DBA /* Data */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -259,8 +249,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00DB696C13202C5100AF998E /* YAJLiOS.framework */,
+				00DB68C81320248500AF998E /* JSONKit-1.4 */,
 				00F89022109B5B8900C8E5AD /* TouchJSON */,
-				00DB7F79107EECA200F85213 /* libYAJLIPhone-0.2.10 */,
 				00D9FEB0107EE26200A11DBA /* SBJSON-2.2.2 */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -296,7 +287,14 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "JSONPerfTest" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -345,6 +343,7 @@
 				00F8904F109B5BF400C8E5AD /* NSDictionary_JSONExtensions.m in Sources */,
 				00F89050109B5BF400C8E5AD /* NSScanner_Extensions.m in Sources */,
 				00F89051109B5BF400C8E5AD /* CDataScanner.m in Sources */,
+				00DB68CE1320248500AF998E /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,26 +354,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Gabriel Handford";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gabriel Handford";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = JSONPerfTest_Prefix.pch;
 				INFOPLIST_FILE = "JSONPerfTest-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.6\"",
-					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.7\"",
-					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.10\"",
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
 				);
-				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = JSONPerfTest;
 				PROVISIONING_PROFILE = "439BA62B-5015-4D34-8115-872ACE4DD6A3";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "439BA62B-5015-4D34-8115-872ACE4DD6A3";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -382,24 +381,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Gabriel Handford";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gabriel Handford";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = JSONPerfTest_Prefix.pch;
 				INFOPLIST_FILE = "JSONPerfTest-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.6\"",
-					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.7\"",
-					"\"$(SRCROOT)/Frameworks/libYAJLIPhone-0.2.10\"",
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
 				);
-				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = JSONPerfTest;
 				PROVISIONING_PROFILE = "439BA62B-5015-4D34-8115-872ACE4DD6A3";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "439BA62B-5015-4D34-8115-872ACE4DD6A3";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
