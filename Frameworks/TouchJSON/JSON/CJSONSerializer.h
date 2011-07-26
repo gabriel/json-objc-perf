@@ -29,19 +29,25 @@
 
 #import <Foundation/Foundation.h>
 
-@class CJSONDataSerializer;
-
-/// Serialize JSON compatible objects (NSNull, NSNumber, NSString, NSArray, NSDictionary) into a JSON formatted string. Note this class is just a wrapper around CJSONDataSerializer which you really should be using instead.
 @interface CJSONSerializer : NSObject {
-	CJSONDataSerializer *serializer;
 }
 
-+ (id)serializer;
++ (CJSONSerializer *)serializer;
 
-/// Take any JSON compatible object (generally NSNull, NSNumber, NSString, NSArray and NSDictionary) and produce a JSON string.
-- (NSString *)serializeObject:(id)inObject;
+- (BOOL)isValidJSONObject:(id)inObject;
 
-- (NSString *)serializeArray:(NSArray *)inArray;
-- (NSString *)serializeDictionary:(NSDictionary *)inDictionary;
+/// Take any JSON compatible object (generally NSNull, NSNumber, NSString, NSArray and NSDictionary) and produce an NSData containing the serialized JSON.
+- (NSData *)serializeObject:(id)inObject error:(NSError **)outError;
+
+- (NSData *)serializeNull:(NSNull *)inNull error:(NSError **)outError;
+- (NSData *)serializeNumber:(NSNumber *)inNumber error:(NSError **)outError;
+- (NSData *)serializeString:(NSString *)inString error:(NSError **)outError;
+- (NSData *)serializeArray:(NSArray *)inArray error:(NSError **)outError;
+- (NSData *)serializeDictionary:(NSDictionary *)inDictionary error:(NSError **)outError;
 
 @end
+
+typedef enum {
+    CJSONSerializerErrorCouldNotSerializeDataType = -1,
+    CJSONSerializerErrorCouldNotSerializeObject = -1
+} CJSONSerializerError;

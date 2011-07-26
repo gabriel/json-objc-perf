@@ -9,9 +9,10 @@
 #import "JSONTest.h"
 
 #import <YAJLiOS/YAJL.h>
-#import "NSString+SBJSON.h"
+#import "SBJson.h"
 #import "CJSONDeserializer.h"
 #import "JSONKit.h"
+#import "NXJsonParser.h"
 
 
 @implementation JSONTest
@@ -52,9 +53,20 @@
 
 - (void)JSONKitTest:(NSString *)resourceName count:(NSInteger)count {
   NSData *JSONData = [[self loadDataFromResource:resourceName] retain];
-	RunWithCount(count, ([NSString stringWithFormat:@"JSONKit-%@", resourceName]), { [JSONData objectFromJSONData]; });
+	RunWithCount(count, ([NSString stringWithFormat:@"JSONKit-%@", resourceName]), { 
+    [JSONData objectFromJSONData];
+  });
   [JSONData release];
-  
+}
+
+- (void)nextiveJsonTest:(NSString *)resourceName count:(NSInteger)count {
+  NSData *JSONData = [[self loadDataFromResource:resourceName] retain];
+	RunWithCount(count, ([NSString stringWithFormat:@"NextiveJson-%@", resourceName]), { 
+    NXJsonParser *parser = [[NXJsonParser alloc] initWithData:JSONData];
+    id value = [parser parse:nil ignoreNulls:NO]; value;
+    [parser release];
+  });
+  [JSONData release];
 }
 
 - (void)runWithResourceName:(NSString *)resourceName count:(NSInteger)count {
@@ -62,6 +74,7 @@
   [self YAJLTest:resourceName count:count];
   [self touchJSONTest:resourceName count:count];
   [self JSONKitTest:resourceName count:count];
+  [self nextiveJsonTest:resourceName count:count];
 }
 
 @end

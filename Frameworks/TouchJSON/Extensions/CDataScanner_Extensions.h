@@ -34,4 +34,7 @@
 - (BOOL)scanCStyleComment:(NSString **)outComment;
 - (BOOL)scanCPlusPlusStyleComment:(NSString **)outComment;
 
+- (NSUInteger)lineOfScanLocation;
+- (NSDictionary *)userInfoForScanLocation;
+
 @end

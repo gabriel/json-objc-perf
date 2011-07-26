@@ -22,7 +22,7 @@ do { \
 CFAbsoluteTime start = CFAbsoluteTimeGetCurrent(); \
 for(NSInteger i = 0; i < count; i++) { \
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; \
-	id value = (expr); value; \
+	expr; \
 	[pool release]; \
 } \
 \
