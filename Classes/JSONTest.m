@@ -69,12 +69,25 @@
   [JSONData release];
 }
 
+- (void)NSJSONSerializationTest:(NSString *)resourceName count:(NSInteger)count {
+  NSData *JSONData = [[self loadDataFromResource:resourceName] retain];
+  NSError *error = nil;
+  RunWithCount(count, ([NSString stringWithFormat:@"NSJSONSerialization-%@", resourceName]), {
+    [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
+  });
+  NSAssert1(error == nil, @"Errored: %@", error);
+  [JSONData release];
+}
+
 - (void)runWithResourceName:(NSString *)resourceName count:(NSInteger)count {
   [self SBJSONTest:resourceName count:count];
   [self YAJLTest:resourceName count:count];
   [self touchJSONTest:resourceName count:count];
   [self JSONKitTest:resourceName count:count];
   [self nextiveJsonTest:resourceName count:count];
+  if (NSClassFromString(@"NSJSONSerialization")) {
+    [self NSJSONSerializationTest:resourceName count:count];
+  }
 }
 
 @end
